@@ -1,0 +1,229 @@
+    :root {
+      --primary: #006bff;
+      --primary-hover: #1e16a0;
+      /*--bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+	  --bg-gradient: linear-gradient(180deg, #00ff00 0%, #FF4F00 100%); 
+      --card-bg: rgba(0, 255, 180, 0.0);
+      --text: #1f2937;
+      --text-light: #6b7280;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg-gradient); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      padding: 20px; 
+      color: var(--text);
+    }
+
+    .container { 
+      background: var(--card-bg); 
+      width: 100%; 
+      max-width: 400px; 
+      border-radius: 20px; 
+      padding: 32px; 
+      box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px 5px rgba(0, 0, 0, 0.1); 
+      position: relative; 
+      backdrop-filter: blur(10px);
+    }
+
+    h2 { 
+      text-align: center; 
+      color: #333; 
+      margin-bottom: 24px; 
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+    }
+    
+    label { 
+      display: block; 
+      margin: 16px 0 6px; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      color: #0a00ff;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #6b7280;
+      font-size: 0.9rem;
+      user-select: none;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toggle-password:hover {
+      color: var(--primary);
+    }
+    
+    input { 
+      width: 100%; 
+      padding: 12px 16px; 
+      border: 0px solid #e5e7eb; 
+      border-radius: 12px; 
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #f9fafb;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 4px rgb(239 68 68);
+    }
+    
+    button { 
+      width: 100%; 
+      padding: 14px; 
+      border: none; 
+      border-radius: 12px; 
+      font-weight: 700; 
+      font-size: 1rem;
+      cursor: pointer; 
+      margin-top: 24px; 
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Improved Scan Button */
+    .btn-scan { 
+      background: white; 
+      color: var(--primary); 
+      border: 2px solid var(--primary);
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .btn-scan svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      transition: transform 0.3s;
+    }
+    
+    .btn-scan:hover { 
+      background: #eef2ff; 
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+    }
+
+    .btn-scan.scanning {
+      background: #f3f4f6;
+      border-color: #d1d5db;
+      color: #6b7280;
+      cursor: wait;
+    }
+    
+    .btn-scan.scanning svg {
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    
+    .btn-save { 
+      background: var(--primary); 
+      color: white; 
+      box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+      text-transform: uppercase;
+    }
+    .btn-save:hover { 
+      background: var(--primary-hover); 
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px -1px rgba(99, 102, 241, 0.4);
+    }
+    .btn-save:active { transform: translateY(0); }
+
+    /* WiFi List */
+    #wifi-list { 
+      display: none; 
+      margin-top: 15px; 
+      border: 1px solid #e5e7eb; 
+      border-radius: 12px; 
+      max-height: 200px; 
+      overflow-y: auto; 
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .wifi-item { 
+      padding: 12px 16px; 
+      border-bottom: 1px solid #f3f4f6; 
+      cursor: pointer; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .wifi-item:hover { background: #eff6ff; }
+    .wifi-item:last-child { border-bottom: none; }
+    .wifi-item span { font-weight: 600; color: #374151; }
+    .wifi-item small { color: #9ca3af; }
+
+    /* Overlay */
+    .overlay { 
+      position: absolute; 
+      top: 0; left: 0; right: 0; bottom: 0; 
+      background: rgba(255,255,255,0.98); 
+      border-radius: 20px; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      opacity: 0; 
+      pointer-events: none; 
+      transition: opacity 0.3s ease; 
+      z-index: 10;
+    }
+    .overlay.active { opacity: 1; pointer-events: all; }
+    
+    .spinner { 
+      width: 50px; 
+      height: 50px; 
+      border: 5px solid #e5e7eb; 
+      border-top-color: var(--primary); 
+      border-radius: 50%; 
+      animation: spin 1s linear infinite; 
+      margin-bottom: 24px; 
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    
+    .msg-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .msg-box h3 { margin: 10px 0 5px; color: #111; font-size: 1.25rem; }
+    .msg-box p { color: #666; font-size: 1rem; }
+    .error-text { color: #ef4444 !important; }
+    .success-text { color: #10b981 !important; }
+    
+    .icon-large { font-size: 64px; margin-bottom: 16px; display: block; line-height: 1; }
+    .icon-success { color: #10b981; }
+    .icon-error { color: #ef4444; }
