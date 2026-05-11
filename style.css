@@ -21,7 +21,7 @@
       color: var(--text);
     }
 
-    .cont { 
+    .con { 
       background: var(--card-bg); 
       width: 100%; 
       max-width: 400px; 
