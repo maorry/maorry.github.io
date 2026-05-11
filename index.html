@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Device Configuration</title>
+  </head>
+<body>
+
+  <div class="container">
+    <!-- Overlay for status -->
+    <div id="overlay" class="overlay">
+      <div id="loading-ui">
+        <div class="spinner"></div>
+        <h3>Verifying Connection...</h3>
+        <p>Please wait while we test the WiFi.</p>
+        <p>Wait 15 seconds and close the browser</p>
+      </div>
+      
+      <div id="success-ui" class="msg-box" style="display:none;">
+        <span class="icon-large icon-success">✓</span>
+        <h3 class="success-text">Connected!</h3>
+        <p>Credentials correct. Rebooting...</p>
+      </div>
+
+      <div id="error-ui" class="msg-box" style="display:none;">
+        <span class="icon-large icon-error">✕</span>
+        <h3 class="error-text">Connection Failed</h3>
+        <p>Could not connect. Check password.</p>
+        <button onclick="closeOverlay()" style="background:#ef4444; color:white; margin-top:20px;">Try Again</button>
+      </div>
+    </div>
+
+    <h2>ESP32 WiFi Setup</h2>
+    
+    <button type="button" class="btn-scan" onclick="scanWifi()">
+      <!-- WiFi Icon -->
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2
+       12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2
+        2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0
+         1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.74 5.27z"/></svg>
+      <span>Scan for Networks</span>
+    </button>
+    <div id="wifi-list"></div>
+
+    <form id="config-form" onsubmit="handleFormSubmit(event)">
+      <label>WiFi SSID</label>
+      <input type="text" id="ssid" name="ssid" required placeholder="Select or type SSID">
+      
+      <label>WiFi Password</label>
+      <div class="password-container">
+        <input type="password" id="pass" name="pass" placeholder="Enter WiFi Password">
+        <span class="toggle-password" onclick="togglePassword()">Show</span>
+      </div>
+      <div>
+      
+      </div>
+      <h2 style="margin-top:20px;=">Bambu Printer Setup</h2>
+
+      <label>Printer ip Address</label>
+      <input type="text" id="ip" name="ip" required placeholder="Enter printer ip address">
+      
+      <label>Printer Access Code</label>
+      <input type="access" id="acc" name="acc" placeholder="Enter Printer Access Code">
+      
+      <label>Printer Serial Number</label>
+      <input type="text" id="sn" name="sn" placeholder="Enter Printer Serial Number">
+
+      <button type="submit" class="btn-save">Save & Connect</button>
+    </form>
+  </div>
+  </body>
+</html>
