@@ -21,6 +21,17 @@
       color: var(--text);
     }
 
+    .cont { 
+      background: var(--card-bg); 
+      width: 100%; 
+      max-width: 400px; 
+      border-radius: 20px; 
+      padding: 32px; 
+      box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px 5px rgba(0, 0, 0, 0.1); 
+      position: relative; 
+      backdrop-filter: blur(10px);
+    }
+
     .container { 
       background: var(--card-bg); 
       width: 100%; 
