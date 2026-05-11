@@ -19,7 +19,7 @@
         <p>Wait 15 seconds and close the browser</p>
       </div>
       
-      <div id="success-ui" class="msg-box" style="display:none;">
+  <!--    <div id="success-ui" class="msg-box" style="display:none;">
         <span class="icon-large icon-success">✓</span>
         <h3 class="success-text">Connected!</h3>
         <p>Credentials correct. Rebooting...</p>
@@ -36,8 +36,8 @@
     <h2>ESP32 WiFi Setup</h2>
     
     <button type="button" class="btn-scan" onclick="scanWifi()">
-      <!-- WiFi Icon -->
-      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2
+// -->      <!-- WiFi Icon -->
+ <!--     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2
        12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2
         2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0
          1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.74 5.27z"/></svg>
@@ -70,6 +70,11 @@
 
       <button type="submit" class="btn-save">Save & Connect</button>
     </form>
-  </div>
+  </div> -->
+
+      <esp-web-install-button
+       manifest="https://firmware.esphome.io/esp-web-tools/manifest.json"
+      ></esp-web-install-button>
+      
   </body>
 </html>
