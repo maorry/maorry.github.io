@@ -1,3 +1,6 @@
+type="module"
+  src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"
+
 function scanWifi() {
     const list = document.getElementById('wifi-list');
     const btn = document.querySelector('.btn-scan');
