@@ -3,91 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>ESP32 Configuration</title>
+  <title>ESP32 Bamby</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
   </head>
-<body>
-<div class="con">
-   <h2>testtt</h2>
-</div>
   
-  <div class="container">
-    <h2>test</h2>
-    <!-- Overlay for status -->
+<body>
+<header class="headd"> <h1>ESP32 Bamby</h1> </header>
+
+
+   <div class="container">
+    
+    <!-- Overlay for status 
     <div id="overlay" class="overlay">
       <div id="loading-ui">
         <div class="spinner"></div>
         <h3>Verifying Connection...</h3>
         <p>Please wait while we test the WiFi.</p>
-        <p>Wait 15 seconds and close the browser</p>
-      </div>
-
-    <div class="container1">
-      <h2>test1</h2>
-      <div> manifest="https://firmware.esphome.io/esp-web-tools/manifest.json"</div>
+        <p>Wait 15 seconds and close the browser</p>  -->
+    <div class="sec">
+	  <div class="conintrud"> 
+	     <h2>Meet Bamby</h2>
+		    <p>Bamby the wireless bambu printers monitor.</p>
+		    <p>Bamby will show live data from the printer with cute expressions.</p>
+			<p>It needs only 2 components: esp32-c3 super mini and 1.28" round tft screen gc9a01.</p>
+			<p>The case can be 3d printed.</p>
+			<!-- insert image -->
+	  </div>
+	  <div class="comp">
+      <h2>Components</h2>
+	  <div class="image-container">
+        <img src="C:\Users\danni\Desktop\arduino sketches\bambu github site\esp32c3 super mini.jpeg" alt="esp32-c3">
+		<img src="C:\Users\danni\Desktop\arduino sketches\bambu github site\gc9a01.jpeg" alt="1.28 tft gc9a01">  
+	 </div>
+	  <p>Just 2 components: ESP32-C3 and GC9A01.</p>
+	</div>
+	</div> 
+	<div class="sec">
+	  <div class="conbuild"> 
+	     <h2>Build Instructions</h2>
+		  <button class="btnbuild" onclick="window.location.href='file:///C:/Users/danni/Desktop/arduino%20sketches/bambu%20github%20site/build_instructions.html';">Take me to build instructions!</button>
+	  </div>
+	  <div class="conR">
+       <h2>conR</h2>
     </div>
-      
-    <div class="container2">
-     <h2>test2</h2>
+	</div> 
+    <div class="sec3">
+	<div class="conL">
+      <h2>conL</h2>
+	  <p class="button" align="center">
+        <esp-web-install-button
+          manifest="https://firmware.esphome.io/esp-web-tools/manifest.json"
+        ></esp-web-install-button>
+      </p>
     </div>
-      
-  <!--    <div id="success-ui" class="msg-box" style="display:none;">
-        <span class="icon-large icon-success">✓</span>
-        <h3 class="success-text">Connected!</h3>
-        <p>Credentials correct. Rebooting...</p>
-      </div>
-
-      <div id="error-ui" class="msg-box" style="display:none;">
-        <span class="icon-large icon-error">✕</span>
-        <h3 class="error-text">Connection Failed</h3>
-        <p>Could not connect. Check password.</p>
-        <button onclick="closeOverlay()" style="background:#ef4444; color:white; margin-top:20px;">Try Again</button>
-      </div>
+	<div class="conR">
+       <h2>conR</h2>
     </div>
+	<div class="conR">
+       <h2>conR</h2>
+    </div>
+	</div>
 
-    <h2>ESP32 WiFi Setup</h2>
     
-    <button type="button" class="btn-scan" onclick="scanWifi()">
-// -->      <!-- WiFi Icon -->
- <!--     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2
-       12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2
-        2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0
-         1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.74 5.27z"/></svg>
-      <span>Scan for Networks</span>
-    </button>
-    <div id="wifi-list"></div>
+	
+</div> 
+ <div class="footer">
+        <a href="https://maorry.github.io/"
+          >maorry site</a
+        > &mdash;
+        Installer powered by <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>.
+    </div>
 
-    <form id="config-form" onsubmit="handleFormSubmit(event)">
-      <label>WiFi SSID</label>
-      <input type="text" id="ssid" name="ssid" required placeholder="Select or type SSID">
-      
-      <label>WiFi Password</label>
-      <div class="password-container">
-        <input type="password" id="pass" name="pass" placeholder="Enter WiFi Password">
-        <span class="toggle-password" onclick="togglePassword()">Show</span>
-      </div>
-      <div>
-      
-      </div>
-      <h2 style="margin-top:20px;=">Bambu Printer Setup</h2>
-
-      <label>Printer ip Address</label>
-      <input type="text" id="ip" name="ip" required placeholder="Enter printer ip address">
-      
-      <label>Printer Access Code</label>
-      <input type="access" id="acc" name="acc" placeholder="Enter Printer Access Code">
-      
-      <label>Printer Serial Number</label>
-      <input type="text" id="sn" name="sn" placeholder="Enter Printer Serial Number">
-
-      <button type="submit" class="btn-save">Save & Connect</button>
-    </form>
-  </div> -->
-
-      <esp-web-install-button
-       manifest="https://firmware.esphome.io/esp-web-tools/manifest.json"
-      ></esp-web-install-button>
-      
   </body>
 </html>
