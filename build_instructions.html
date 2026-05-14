@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ESP32 Bamby</title>
+  <link rel="stylesheet" href="style.css">
+  <!--<script src="script.js"> -->
+  <script
+  type="module"
+  src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"
+  ></script>
+  </head>
+  
+<body>
+<header class="headd"> <h1>ESP32 Bamby build instructions</h1> </header>
+
+ <div class="container">
+      
+	<div class="sec">
+	  <div class="conintrud">
+		<h2>Connections</h2>
+		<div>Connect the screen to the esp32 as follows:</div>
+		  <div class="div-table"> 
+			<div class="div-table-row">
+			<div class="div-table-col"><h3>SCREEN</h3></div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col"><h3>ESP32</h3></div>
+			</div>
+		  <div class="div-table-row">
+			<div class="div-table-col">RST or RES</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">GPIO 0</div>
+		  </div>
+		  <div class="div-table-row">
+			<div class="div-table-col">CS</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">GPIO 5</div>
+		  </div>
+		  <div class="div-table-row">
+			<div class="div-table-col">DC or A0</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">GPIO 1</div>
+		  </div>
+		  <div class="div-table-row">
+			<div class="div-table-col">SDA or MOSI</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">GPIO 4</div>
+		  </div>
+		  <div class="div-table-row">
+			<div class="div-table-col">SCL or CLK</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">GPIO 2</div>
+		  </div>
+		  <div class="div-table-row">
+			<div class="div-table-col">GND</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">GND</div>
+		  </div>
+		  <div class="div-table-row">
+			<div class="div-table-col">VCC</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">3.3V</div>
+		  </div>
+		  </div> <!-- end of table -->
+		  <div>Some screens have only 7 pins, if yours have 8 connect the last one.</div>
+		  <div class="div-table"> 
+			<div class="div-table-row">
+			<div class="div-table-col">LED or BL</div>
+			<div class="div-table-col"><h2>&#8596;</h2></div>
+			<div class="div-table-col">GPIO 6</div>
+		    </div>
+	      </div>
+	  </div>
+	   
+	  <div class="comp">
+        <h2>Components</h2>
+	    <div class="image-conn">
+          <img src="C:\Users\danni\Desktop\arduino sketches\bambu github site\connections.jpg" alt="connections">
+	    </div> 
+      </div> 
+     </div> <!-- end of first row -->
+	 
+	 <div class="sec">
+	  <div class="conintrud">
+		<h2>Firmware Intallation</h2>
+		 <div><h3>To install the firmware:</h3></div>
+		  <ul>
+		   <li>Make sure you're on chrome or edge browser.</li>
+		   <li>Connect the esp32 to the computer with usb.</li>
+		   <li>Pressing the button will propt you to erase the esp32, that will make for a clean installation of the firmware.</li>
+		  </ul>
+		 <div>
+		  <esp-web-install-button manifest="C:\Users\danni\Desktop\arduino sketches\bambu github site\esp32.esp32.esp32c3\manifest.json" install-supported="">
+		  <button slot="activate" class="btninstal" type="button">Install the firmware</button>
+		  </esp-web-install-button>
+		 </div>
+	  </div>
+		  
+	  <div class="comp">
+        <h2>Components</h2>
+	    <div class="image-conn">
+         <!-- <img src="C:\Users\danni\Desktop\arduino sketches\bambu github site\connections.jpg" alt="connections">  -->
+	    </div> 
+      </div> 
+     </div>  <!-- end of second row -->
+	 
+ </div> <!--  end of container -->
+ 
+ <button class="bntbackfloat" onclick="window.location.href='file:///C:/Users/danni/Desktop/arduino%20sketches/bambu%20github%20site/index.html';"> Back
+   
+ </button>
+ <button class="bnttopfloat" onclick="window.location.href='#';"> Top
+   
+ </button>
+
+ <div class="footer">
+        <a href="https://maorry.github.io/"
+          >maorry site</a
+        > &mdash;
+        Installer powered by <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>.
+  </div>
+
+  </body>
+</html>
