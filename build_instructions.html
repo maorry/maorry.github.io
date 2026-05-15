@@ -85,7 +85,8 @@
 	  <div class="conintrud">
 		<h2>Firmware Intallation</h2>
 		 <div><h3>To install the firmware:</h3></div>
-		  <p>Make sure the printer is on "LAN Mode Only". </p>
+		  <p>Turn your printer and go to settings > WLAN / Network and toggle on LAN Mode Only.</p>
+		  <p style="color: red;">DO NOT SKIP THE STEP ABOVE.</p>
 		  <p>Connect Bamby to a usb, after Bamby is connected to the printer and only then you can try to turn "LAN Mode Only" off.</p>
 		  <p>To make sure Bamby will connect to the printer, the 2 steps above must be done every time.</p>
 		  <p>Make sure you're on chrome or edge browser.</p>
@@ -99,7 +100,7 @@
 		   <li>Wait for the firmware to finish the installation.</li>
 		  </ul>
 		 <div>
-		  <esp-web-install-button manifest="manifest.json" install-supported="">
+		  <esp-web-install-button manifest="C:\Users\danni\Desktop\arduino sketches\bambu github site\esp32.esp32.esp32c3\manifest.json" install-supported="">
 		  <button slot="activate" class="btninstal" type="button">Install the firmware</button>
 		  </esp-web-install-button>
 		 </div>
@@ -107,13 +108,13 @@
 		  
 	  <div class="comp">
         <h2>After firmware installation</h2>
-	    <ul>
-		   <li>Turn your printer and go to settings > WLAN / Network and toggle on LAN Mode Only.</li>
-		   <li style="background-color: lightgrey; color: red;">DO NOT SKIP THE STEP ABOVE.</li>
-		   <li>Note the Credentials: Your printer will display an IP Address and a Verification/Access Code, you will need them later.</li>
+		<p>The time frame for this section is 10 minutes. If you haven't enter all the data and press the button within 10 minutes, the device will reboot.</p>
+	    <p>everything is fine, just start this section again from the beginning, no need to install the firmware again.</p>
+		<ul>
+		   <li>Go to settings and note the Credentials: Your printer will display an IP Address and a Verification/Access Code, you will need them later.</li>
 		   <li>On the Printer Screen: Navigate to Settings > General > Device Info look for serial number, you will need it later.</li>
 		   <li>Go to the WIFI settings on your phone or computer, Available networks > click on ESP BAMBY enter password:123456789 and connect to it.</li>
-		   <li>Before the next step, make sure it remains connected and that the phone or computer does not reconnect to the Internet.</li>
+		   <li>Before the next step, make sure it remains connected to ESP Bamby and that the phone or computer does not reconnect to the Internet.</li>
 		   <li>Open the browser and go to: 192.168.4.18</li>
 		   <li>In the form that opened press Scan for Networks choose your wifi ssid, enter your wifi password.</li>
 		   <li>In the Bambu Printer Setup section: enter your Printer ip Address, Printer Access Code, Printer Serial Number (collected earlier).</li>
